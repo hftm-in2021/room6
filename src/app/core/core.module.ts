@@ -13,6 +13,7 @@ import { RouterModule } from '@angular/router';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [HeaderComponent, SidebarComponent],
@@ -29,7 +30,8 @@ import { MatListModule } from '@angular/material/list';
     AuthConfigModule,
     MatSidenavModule,
     MatListModule,
+    MatProgressBarModule,
   ],
-  exports: [HeaderComponent],
+  exports: [HeaderComponent, SidebarComponent],
 })
 export class CoreModule {}

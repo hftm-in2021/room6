@@ -10,26 +10,4 @@ import { LoadingStateService } from './core/loading-state.service';
 })
 export class AppComponent {
   title = 'blog-frog-16';
-
-  isLoading$: Observable<boolean>;
-  loginResponse$: Observable<LoginResponse>;
-
-  constructor(
-    private loadingService: LoadingStateService,
-    private oidcSecurityService: OidcSecurityService
-  ) {
-    this.isLoading$ = this.loadingService.state$;
-
-    this.loginResponse$ = oidcSecurityService.checkAuth().pipe(
-      filter((loginRespose) => !!loginRespose),
-      tap((x) => console.log(x))
-    );
-  }
-
-  login() {
-    this.oidcSecurityService.authorize();
-  }
-  logout() {
-    this.oidcSecurityService.logoff().subscribe((x) => console.log(x));
-  }
 }

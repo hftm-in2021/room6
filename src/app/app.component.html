@@ -1,12 +1,3 @@
 <div class="default-theme">
-  <ng-container *ngIf="isLoading$ | async; then isLoading"></ng-container>
-  <ng-template #isLoading>
-    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-  </ng-template>
-  <app-header
-    (login)="login()"
-    (logoff)="logout()"
-    [loginResponse]="loginResponse$ | async"
-  ></app-header>
-  <router-outlet></router-outlet>
+  <app-sidebar></app-sidebar>
 </div>
